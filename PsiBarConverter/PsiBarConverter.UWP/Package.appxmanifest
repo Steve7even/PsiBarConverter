@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="9eb90dbb-e948-48d1-9ea7-8786fc6856a6"
+    Name="b7b5197a-c682-4885-a1bb-1ccba7d643b1"
     Publisher="CN=Dittmann Sven"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="9eb90dbb-e948-48d1-9ea7-8786fc6856a6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="b7b5197a-c682-4885-a1bb-1ccba7d643b1" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>PsiBarConverter.UWP</DisplayName>
