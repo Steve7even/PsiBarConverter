@@ -1,5 +1,7 @@
 # PsiBarConverter
 Simple Converter App
 
-Based on Xamarin Forms
-Using the Xamarin Forms Shell
+## Description
+- Based on Xamarin Forms.
+- Using the Xamarin Forms Shell.
+- Deployable to iOS and Android.
