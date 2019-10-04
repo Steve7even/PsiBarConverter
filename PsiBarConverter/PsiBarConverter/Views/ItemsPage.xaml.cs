@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using PsiBarConverter.Views;
 using PsiBarConverter.ViewModels;
+using PsiBarConverter.Util;
 
 namespace PsiBarConverter.Views
 {
@@ -30,81 +31,19 @@ namespace PsiBarConverter.Views
             Title = "Converter";
             btnChangeCalcMode.Text = "<-->";
             curCalcMode = CalcMode.PSI_TO_BAR;
+            BindingContext = new ConverterModel();
         }
 
         
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            
+            txtSourceValue.CursorPosition = 0;
+            txtSourceValue.SelectionLength = txtSourceValue.Text.Length;
             txtSourceValue.Focus();
         }
 
-        private void Entry_PsiTextChanged(object sender, TextChangedEventArgs e)
-        {
-
-
-            String newVal = e.NewTextValue;
-            Calc(newVal);
-        }
-
-        private void Calc(string newVal)
-        {
-            if (newVal != null && newVal.Length != 0)
-            {
-                switch (curCalcMode)
-                {
-                    case CalcMode.PSI_TO_BAR:
-                        {
-                            LblResult.Text = (Double.Parse(newVal) / CONVERTVALUE).ToString();
-                            break;
-                        }
-                    case CalcMode.BAR_TO_PSI:
-                        {
-                            LblResult.Text = (Double.Parse(newVal) * CONVERTVALUE).ToString();
-                            break;
-                        }
-
-                }
-            }
-            else
-            {
-                LblResult.Text = "";
-            }
-        }
-
-        private void OnConverterChanged(object sender, EventArgs e)
-        {
-            switch(curCalcMode)
-            {
-                case CalcMode.BAR_TO_PSI:
-                    {
-                        btnChangeCalcMode.Text = "<-->";
-                        LblSourceUnit.Text = "Psi";
-                        LblResultUnit.Text = "Bar";
-                        curCalcMode = CalcMode.PSI_TO_BAR;
-                        SwitchSourceAndResultValues();
-                        break;
-                    }
-                case CalcMode.PSI_TO_BAR:
-                    {
-                        btnChangeCalcMode.Text = "<-->";
-
-                        LblSourceUnit.Text = "Bar";
-                        LblResultUnit.Text = "Psi";
-
-                        curCalcMode = CalcMode.BAR_TO_PSI;
-                        SwitchSourceAndResultValues();
-                        break;
-                    }
-            }
-        }
-
-        private void SwitchSourceAndResultValues()
-        {
-            string sourceVal = txtSourceValue.Text;
-            string resultVal = LblResult.Text;
-            txtSourceValue.Text = resultVal;
-            LblResult.Text = sourceVal;
-        }
+       
     }
 }

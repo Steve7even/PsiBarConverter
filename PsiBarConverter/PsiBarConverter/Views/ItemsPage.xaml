@@ -14,12 +14,12 @@
 
     <StackLayout>
         <Label Text="Psi" FontSize="Large" x:Name="LblSourceUnit" HorizontalOptions="StartAndExpand" Margin="10,10,10,10"></Label>
-        <Entry FontSize="Large" TextChanged="Entry_PsiTextChanged" x:Name="txtSourceValue" Text="0" Keyboard="Numeric" Margin="10,10,10,10"></Entry>
+        <Entry FontSize="Large" Text="{Binding Psi}"  x:Name="txtSourceValue" Keyboard="Numeric" Margin="10,10,10,10"></Entry>
         <Button Text="Default"
                 HorizontalOptions="CenterAndExpand"
-                Clicked="OnConverterChanged" x:Name="btnChangeCalcMode" />
+                x:Name="btnChangeCalcMode" />
         <Label Text="Bar" x:Name="LblResultUnit" FontSize="Large" Margin="10,10,10,10"></Label>
-        <Label Text="0" x:Name="LblResult" FontSize="Large" Margin="10,10,10,10"></Label>
+        <Entry x:Name="LblResult" Text="{Binding Bar}" FontSize="Large" Margin="10,10,10,10" Keyboard="Numeric" ></Entry>
         
     </StackLayout>
 
