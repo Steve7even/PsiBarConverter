@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="PsiBarConverter.Views.AboutPage"
              xmlns:vm="clr-namespace:PsiBarConverter.ViewModels"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             Shell.NavBarIsVisible="False">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />

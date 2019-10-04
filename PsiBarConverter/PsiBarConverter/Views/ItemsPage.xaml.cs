@@ -35,12 +35,14 @@ namespace PsiBarConverter.Views
         }
 
         
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             
             txtSourceValue.CursorPosition = 0;
             txtSourceValue.SelectionLength = txtSourceValue.Text.Length;
+            await Task.Delay(600);
+            txtSourceValue.Unfocus();
             txtSourceValue.Focus();
         }
 
