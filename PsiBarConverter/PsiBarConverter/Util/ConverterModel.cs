@@ -7,13 +7,13 @@ namespace PsiBarConverter.Util
 {
     class ConverterModel : INotifyPropertyChanged
     {
-        private  decimal CONVERTVALUE = new Decimal(14.504);
+        private readonly double CONVERTVALUE = 14.504;
 
-        decimal psi = new Decimal(0.0);
+        double psi = 0.0;
         
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public decimal Psi {
+        public double Psi {
             set
             {
                 if (PropertyChanged != null)
@@ -34,9 +34,9 @@ namespace PsiBarConverter.Util
             }
         }
         
-        public decimal bar = new Decimal(0.0);
+        public double bar = 0.0;
 
-        public decimal Bar
+        public double Bar
         {
             set
             {
